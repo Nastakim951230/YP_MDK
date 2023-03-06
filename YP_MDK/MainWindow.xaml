@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Пиши-стирай" Height="450" Width="800" Icon="./Image/logo.png">
     <Grid>
-        
+        <Frame Name="frame_perehod" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

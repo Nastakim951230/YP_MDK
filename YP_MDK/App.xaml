@@ -4,6 +4,22 @@
              xmlns:local="clr-namespace:YP_MDK"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Style TargetType="TextBlock">
+            <Setter  Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF76E383"></Setter>
+            <Setter  Property="FontFamily"  Value="Comic Sans MS"></Setter>
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Margin" Value="10,0,10,0"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter  Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+     
     </Application.Resources>
 </Application>

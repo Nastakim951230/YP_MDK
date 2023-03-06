@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace YP_MDK
+namespace YP_MDK.Page
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Manager.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Manager : Page
     {
-        public MainWindow()
+        public Manager()
         {
             InitializeComponent();
-            ClassPage.ClassBase.BD = new Base();
-            frame_perehod.Navigate(new Page.Avtorizats());
-            ClassPage.FrameNavigate.perehod = frame_perehod;
         }
     }
 }
