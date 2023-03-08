@@ -18,7 +18,7 @@ namespace YP_MDK.Page
     /// <summary>
     /// Логика взаимодействия для Manager.xaml
     /// </summary>
-    public partial class Manager : Page
+    public partial class Manager 
     {
         public Manager()
         {

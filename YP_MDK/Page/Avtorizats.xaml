@@ -9,19 +9,17 @@
       Title="Avtorizats">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" FontSize="24" Foreground="#FF498C51" >Авторизация</TextBlock>
-        <StackPanel VerticalAlignment="Center">
-
+        
+        <StackPanel HorizontalAlignment="Center" Margin="50">
+            <TextBlock  FontSize="24" Foreground="#FF498C51" HorizontalAlignment="Center" >Авторизация</TextBlock>
             <GroupBox Header="Введите логин">
                 <TextBox Name="tbLogin"></TextBox>
             </GroupBox>
             <GroupBox Header="Введите Пароль">
                 <TextBox Name="tbPassword"></TextBox>
             </GroupBox>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name="vhod" Click="vhod_Click">Вход</Button>
-                <Button Name="gost" Click="gost_Click">Гость</Button>
-            </StackPanel>
+            <Button Name="vhod" Click="vhod_Click">Авторизировать</Button>
+            <Button Name="gost" Click="gost_Click">Войти как гость</Button>
 
         </StackPanel>
     </Grid>

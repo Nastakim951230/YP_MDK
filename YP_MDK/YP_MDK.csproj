@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="ClassPage\ClassBase.cs" />
     <Compile Include="ClassPage\FrameNavigate.cs" />
+    <Compile Include="ClassProduct.cs" />
     <Compile Include="Manufacturer.cs">
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
@@ -222,6 +223,7 @@
       <DependentUpon>BaseBD.edmx</DependentUpon>
       <LastGenOutput>BaseBD.cs</LastGenOutput>
     </Content>
+    <Resource Include="Image\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

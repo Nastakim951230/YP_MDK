@@ -4,28 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9e9688b081bb4f42abc3c5d714d87f8b" Name="Diagram1">
-        <EntityTypeShape EntityType="practic23Model.Category" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Manufacturer" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Order" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.OrderProduct" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.PointOfIssue" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Role" Width="1.5" PointX="1.5" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Status" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Supplier" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.Unit" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="practic23Model.User" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
-        <AssociationConnector Association="practic23Model.FK_Product_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_Product_Manufacturer" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_Order_PointOfIssue" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_Order_Status" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_Order_User" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_OrderProduct_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_OrderProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_Product_Supplier" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK_Product_Unit" ManuallyRouted="false" />
-        <AssociationConnector Association="practic23Model.FK__User__UserRole__5535A963" ManuallyRouted="false" />
+      <Diagram DiagramId="9e9688b081bb4f42abc3c5d714d87f8b" Name="Diagram1" ZoomLevel="33">
+        <EntityTypeShape EntityType="practic23Model.Category" Width="1.5" PointX="0.75" PointY="7.875" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Manufacturer" Width="1.5" PointX="0.75" PointY="2.375" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Order" Width="1.5" PointX="3" PointY="15.375" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.OrderProduct" Width="1.5" PointX="5.25" PointY="2.125" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.PointOfIssue" Width="1.5" PointX="0.75" PointY="15.375" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Product" Width="1.5" PointX="3" PointY="1" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Role" Width="1.5" PointX="1.5" PointY="21.5" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Status" Width="1.5" PointX="0.75" PointY="13.125" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Supplier" Width="1.5" PointX="0.75" PointY="5.5" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.Unit" Width="1.5" PointX="0.75" PointY="10.25" FillColor="255, 192, 128" />
+        <EntityTypeShape EntityType="practic23Model.User" Width="1.5" PointX="0.75" PointY="18" FillColor="255, 192, 128" />
+        <AssociationConnector Association="practic23Model.FK_Product_Category" />
+        <AssociationConnector Association="practic23Model.FK_Product_Manufacturer" />
+        <AssociationConnector Association="practic23Model.FK_Order_PointOfIssue" />
+        <AssociationConnector Association="practic23Model.FK_Order_Status" />
+        <AssociationConnector Association="practic23Model.FK_Order_User" />
+        <AssociationConnector Association="practic23Model.FK_OrderProduct_Order" />
+        <AssociationConnector Association="practic23Model.FK_OrderProduct_Product" />
+        <AssociationConnector Association="practic23Model.FK_Product_Supplier" />
+        <AssociationConnector Association="practic23Model.FK_Product_Unit" />
+        <AssociationConnector Association="practic23Model.FK__User__UserRole__5535A963" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

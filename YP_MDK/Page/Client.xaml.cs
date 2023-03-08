@@ -18,7 +18,7 @@ namespace YP_MDK.Page
     /// <summary>
     /// Логика взаимодействия для Client.xaml
     /// </summary>
-    public partial class Client : Page
+    public partial class Client 
     {
         public Client()
         {

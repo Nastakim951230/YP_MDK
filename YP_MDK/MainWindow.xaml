@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP_MDK"
         mc:Ignorable="d"
-        Title="Пиши-стирай" Height="450" Width="800" Icon="./Image/logo.png">
+        Title="ООО «Пиши-стирай" Height="600" Width="1000" MinHeight="600" MinWidth="1000" Icon="./Image/icon.ico">
     <Grid>
-        <Frame Name="frame_perehod" NavigationUIVisibility="Hidden"></Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+                <Image Source="./Image/logo.png" Height="70"/>
+                <TextBlock Text="ООО «Пиши-стирай»" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Frame Name="frame_perehod" NavigationUIVisibility="Hidden"></Frame>
+        </Grid>
+       
     </Grid>
 </Window>
