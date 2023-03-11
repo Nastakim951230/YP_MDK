@@ -21,6 +21,8 @@ namespace YP_MDK.Page
     public partial class Admin 
     {
         User user;
+        List<ClassPage.ClassProductBasket> basket = new List<ClassPage.ClassProductBasket>();
+
         public Admin(User user)
         {
             InitializeComponent();
@@ -119,6 +121,36 @@ namespace YP_MDK.Page
         }
 
         private void UpdateProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addOrder_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem btn = (MenuItem)sender;
+            string id = btn.Uid;
+
+            Product index = ClassPage.ClassBase.BD.Product.FirstOrDefault(x => x.ProductArticleNumber == id);
+            bool kolvo = false;
+            foreach (ClassPage.ClassProductBasket productBasket in basket)
+            {
+                if (productBasket.productBasket == index)
+                {
+                    productBasket.count = productBasket.count += 1;
+                    kolvo = true;
+                }
+            }
+            if (!kolvo)
+            {
+                ClassPage.ClassProductBasket product = new ClassPage.ClassProductBasket();
+                product.productBasket = index;
+                product.count = 1;
+                basket.Add(product);
+            }
+            BasketButton.Visibility = Visibility.Visible;
+        }
+
+        private void BasketButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

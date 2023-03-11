@@ -73,6 +73,7 @@
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ClassPage\ClassBase.cs" />
+    <Compile Include="ClassPage\ClassProductBasket.cs" />
     <Compile Include="ClassPage\FrameNavigate.cs" />
     <Compile Include="ClassProduct.cs" />
     <Compile Include="Manufacturer.cs">

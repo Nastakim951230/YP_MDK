@@ -24,7 +24,9 @@
             <TextBlock Name="UsersFio" HorizontalAlignment="Right" Margin="0,5,10,0">ФИО пользователя</TextBlock>
         </Grid>
         <Grid Grid.Row="1">
-            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="BasketButton" Click="BasketButton_Click" Visibility="Collapsed">Корзина</Button>
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="2" Margin="5,0,0,0">
                 <Grid.ColumnDefinitions>
@@ -104,7 +106,12 @@
                             </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Name="addOrder" Header="Добавить к заказу" Click="addOrder_Click"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
 
             </Grid>
             <Grid Grid.Row="4">

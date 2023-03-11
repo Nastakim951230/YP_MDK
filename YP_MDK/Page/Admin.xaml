@@ -25,6 +25,7 @@
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Button Name="addProduct" Click="addProduct_Click">Добавить новый продукт</Button>
+                <Button Name="BasketButton" Click="BasketButton_Click" Visibility="Collapsed">Корзина</Button>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2">
@@ -109,6 +110,11 @@
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Name="addOrder" Header="Добавить к заказу" Click="addOrder_Click"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
             </ListView>
 
         </Grid>

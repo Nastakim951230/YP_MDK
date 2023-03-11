@@ -20,7 +20,9 @@ namespace YP_MDK.Page
     /// </summary>
     public partial class Str_Gost 
     {
-
+        List<ClassPage.ClassProductBasket> basket=new List<ClassPage.ClassProductBasket>();
+        
+        
         public Str_Gost()
         {
             InitializeComponent();
@@ -107,13 +109,35 @@ namespace YP_MDK.Page
             ClassPage.FrameNavigate.perehod.Navigate(new Avtorizats());
         }
 
-        private void Grid_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        private void addOrder_Click(object sender, RoutedEventArgs e)
         {
-            //Grid tb = (Grid)sender;
-            //string id = tb.Uid;
-            
-          
-            //MessageBox.Show("Предмет добавлен в заказ");
+            MenuItem btn = (MenuItem)sender;
+            string id = btn.Uid;
+
+            Product index = ClassPage.ClassBase.BD.Product.FirstOrDefault(x=>x.ProductArticleNumber==id);
+            bool kolvo=false;
+            foreach (ClassPage.ClassProductBasket productBasket in basket)
+            {
+                if (productBasket.productBasket == index)
+                {
+                    productBasket.count = productBasket.count += 1;
+                    kolvo = true;
+                }
+            }
+            if (!kolvo)
+            {
+                ClassPage.ClassProductBasket product = new ClassPage.ClassProductBasket();
+                product.productBasket = index;
+                product.count = 1;
+                basket.Add(product);
+            }
+            BasketButton.Visibility = Visibility.Visible;
+
+        }
+
+        private void Basket_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
