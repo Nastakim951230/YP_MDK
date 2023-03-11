@@ -32,7 +32,7 @@ namespace YP_MDK.Page
 
             if (coint == 1)
             {
-                
+
                 CaptchaSP.Visibility = Visibility.Visible;
                 Random random = new Random();
                 int kolvoPolyline = random.Next(7, 20);
@@ -50,86 +50,114 @@ namespace YP_MDK.Page
                     };
                     Captcha.Children.Add(line);
                 }
+
+
                 text = String.Empty;
                 string ALF = "1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
-                for (int i = 0; i < 4; ++i)
-                    text += ALF[random.Next(ALF.Length)];
 
-                int vubor = random.Next(0, 3);
-
-                int fontSize = random.Next(16, 33);
-            perehod: int height = random.Next((int)Captcha.Height - 20);
-                int width = random.Next((int)Captcha.Width - 20);
-                if (width < 120)
+                text = "";
+                for (int i = 0; i < 4; i++)
                 {
-                    if (height < 50)
+                    text += ALF[random.Next(ALF.Length)];
+                }
+
+                int start = 0;
+                int end = 0;
+                int h = (int)Captcha.Width / text.Length;
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (i == 0)
                     {
-                        if (vubor == 0)
-                        {
-                            TextBlock textBlock = new TextBlock()
-                            {
-
-                                Text = text,
-                                FontSize = fontSize,
-                                Padding = new Thickness(width, height, 0, 0),
-                                TextDecorations = TextDecorations.Strikethrough,
-
-                            };
-                            Captcha.Children.Add(textBlock);
-                        }
-                        else if (vubor == 1)
-                        {
-                            TextBlock textBlock = new TextBlock()
-                            {
-
-                                Text = text,
-                                FontSize = fontSize,
-                                Padding = new Thickness(width, height, 0, 0),
-                                FontWeight = FontWeights.Bold,
-                                TextDecorations = TextDecorations.Strikethrough,
-                            };
-                            Captcha.Children.Add(textBlock);
-                        }
-                        else if (vubor == 2)
-                        {
-                            TextBlock textBlock = new TextBlock()
-                            {
-
-                                Text = text,
-                                FontSize = fontSize,
-                                Padding = new Thickness(width, height, 0, 0),
-                                FontWeight = FontWeights.Bold,
-                                FontStyle = FontStyles.Italic,
-                                TextDecorations = TextDecorations.Strikethrough,
-                            };
-                            Captcha.Children.Add(textBlock);
-                        }
-                        else if (vubor == 3)
-                        {
-                            TextBlock textBlock = new TextBlock()
-                            {
-
-                                Text = text,
-                                FontSize = fontSize,
-                                Padding = new Thickness(width, height, 0, 0),
-                                TextDecorations = TextDecorations.Strikethrough,
-                                FontStyle = FontStyles.Italic,
-
-                            };
-                            Captcha.Children.Add(textBlock);
-                        }
+                        end += h;
                     }
                     else
                     {
-                        goto perehod;
+                        start = end;
+                        end += h;
+                    }
+
+                    int heightCaptcha = random.Next((int)Captcha.Height);
+                    int widthCaptcha = random.Next(start, end);
+                   
+                     if(heightCaptcha > 70)
+                    {
+                        heightCaptcha -= 30;
+                        if (heightCaptcha <= 30)
+                        {
+                            heightCaptcha = +40;
+                        }
+                    }
+                
+                    if (widthCaptcha > 290) 
+                    {
+                        end -= 10;
+
+                    }
+                    
+                  
+                    int vubor = random.Next(0, 3);
+
+                    int fontSize = random.Next(16, 33);
+
+
+                    if (vubor == 0)
+                    {
+                        TextBlock textBlock = new TextBlock()
+                        {
+
+                            Text = text[i].ToString(),
+                            FontSize = fontSize,
+                            Padding = new Thickness(widthCaptcha, heightCaptcha, 0, 0),
+                            TextDecorations = TextDecorations.Strikethrough,
+
+                        };
+                        Captcha.Children.Add(textBlock);
+                    }
+                    else if (vubor == 1)
+                    {
+                        TextBlock textBlock = new TextBlock()
+                        {
+
+                            Text = text[i].ToString(),
+                            FontSize = fontSize,
+                            Padding = new Thickness(widthCaptcha, heightCaptcha, 0, 0),
+                            FontWeight = FontWeights.Bold,
+                            TextDecorations = TextDecorations.Strikethrough,
+                        };
+                        Captcha.Children.Add(textBlock);
+                    }
+                    else if (vubor == 2)
+                    {
+                        TextBlock textBlock = new TextBlock()
+                        {
+
+                            Text = text[i].ToString(),
+                            FontSize = fontSize,
+                            Padding = new Thickness(widthCaptcha, heightCaptcha, 0, 0),
+                            FontWeight = FontWeights.Bold,
+                            FontStyle = FontStyles.Italic,
+                            TextDecorations = TextDecorations.Strikethrough,
+                        };
+                        Captcha.Children.Add(textBlock);
+                    }
+                    else if (vubor == 3)
+                    {
+                        TextBlock textBlock = new TextBlock()
+                        {
+
+                            Text = text,
+                            FontSize = fontSize,
+
+                            TextDecorations = TextDecorations.Strikethrough,
+                            FontStyle = FontStyles.Italic,
+
+                        };
+                        Captcha.Children.Add(textBlock);
                     }
                 }
-                else
-                {
-                    goto perehod;
-                }
             }
-            else if(coint==2)
+
+            else if (coint == 2)
             {
                 CaptchaSP.Visibility = Visibility.Collapsed;
                 vhod.Visibility = Visibility.Collapsed;

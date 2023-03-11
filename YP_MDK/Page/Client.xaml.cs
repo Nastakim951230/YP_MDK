@@ -105,6 +105,7 @@ namespace YP_MDK.Page
 
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
+            Page.Avtorizats.coint = 0;
             ClassPage.FrameNavigate.perehod.Navigate(new Avtorizats());
         }
 

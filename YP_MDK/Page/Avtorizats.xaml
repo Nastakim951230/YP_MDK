@@ -15,7 +15,7 @@
             <GroupBox Header="Введите логин">
                 <TextBox Name="tbLogin"></TextBox>
             </GroupBox>
-            <GroupBox Header="Введите Пароль">
+            <GroupBox Header="Введите пароль">
                 <TextBox Name="tbPassword"></TextBox>
             </GroupBox>
             <StackPanel Name="CaptchaSP" Visibility="Collapsed">

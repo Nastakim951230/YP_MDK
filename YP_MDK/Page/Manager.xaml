@@ -65,7 +65,7 @@
             <ListView Name="ListProduct" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="{Binding colorBrush}" Background="{Binding colorBrush}">
+                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="{Binding colorBrush}" Background="{Binding colorBackground}">
                             <Grid>
 
                                 <Grid.ColumnDefinitions>
