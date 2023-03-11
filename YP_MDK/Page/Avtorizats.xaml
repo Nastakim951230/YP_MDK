@@ -18,7 +18,16 @@
             <GroupBox Header="Введите Пароль">
                 <TextBox Name="tbPassword"></TextBox>
             </GroupBox>
-            <Button Name="vhod" Click="vhod_Click">Авторизировать</Button>
+            <StackPanel Name="CaptchaSP" Visibility="Collapsed">
+                <Canvas Name="Captcha" Height="100" Width="300">
+
+                </Canvas>
+                <GroupBox Header="Введите текст с картинки:">
+                    <TextBox Name="CaptchaTB"></TextBox>
+                </GroupBox>
+            </StackPanel>
+            <TextBlock Name="time" Visibility="Collapsed">Авторизироваться можно через:10</TextBlock>
+            <Button Name="vhod" Click="vhod_Click" IsEnabled="True">Авторизировать</Button>
             <Button Name="gost" Click="gost_Click">Войти как гость</Button>
 
         </StackPanel>
