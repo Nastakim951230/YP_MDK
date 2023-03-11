@@ -12,11 +12,12 @@
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="100"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -54,13 +55,13 @@
 
             </Grid>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
 
             <ListView Name="ListProduct" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="#FF76E383" Background="{Binding colorBrush}">
-                                <Grid>
+                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="{Binding colorBrush}" Background="{Binding colorBackground}">
+                            <Grid  MouseRightButtonDown="Grid_MouseRightButtonDown">
                                     
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="200"/>
@@ -81,7 +82,7 @@
                                             <TextBlock Text="{Binding ProductCost, StringFormat={}{0:F2}}" TextDecorations="{Binding Decoration}"></TextBlock>
                                             <TextBlock Text="{Binding Skidka}"></TextBlock>
                                         </StackPanel>
-                                       
+                                  
                                     </StackPanel>
                                     </Grid>
                                     <Grid Grid.Column="2" HorizontalAlignment="Right">
@@ -90,14 +91,16 @@
                                         <TextBlock Text="{Binding ProductDiscountAmount, StringFormat={}{0}%}"/>
                                     </StackPanel>
                                 </Grid>
+                                
                                 </Grid>
                             </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                
                 </ListView>
             
         </Grid>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             
                 <StackPanel HorizontalAlignment="Left">
                     <Button Name="Nazad" Click="Nazad_Click">Назад</Button>

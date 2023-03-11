@@ -106,5 +106,20 @@ namespace YP_MDK.Page
         {
             ClassPage.FrameNavigate.perehod.Navigate(new Avtorizats());
         }
+
+        private void DeletProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

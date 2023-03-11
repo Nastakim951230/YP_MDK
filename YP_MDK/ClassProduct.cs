@@ -10,7 +10,7 @@ namespace YP_MDK
     public partial class Product
     {
 
-        public SolidColorBrush colorBrush
+        public SolidColorBrush colorBackground
         { get
             {
                 var brush = new BrushConverter();
@@ -28,7 +28,34 @@ namespace YP_MDK
 
 
          }
+        public SolidColorBrush colorBrush
+        {
+            get
+            {
+                var brush = new BrushConverter();
+                double skidka = Convert.ToDouble(ProductDiscountAmount);
+                if (skidka > 0)
+                {
+                    if(skidka > 0 && skidka <= 9.99)
+                    {
+                        return (SolidColorBrush)(Brush)brush.ConvertFrom("#7fff00");
+                    }
+                    else if(skidka >9.99 && skidka <= 14.99)
+                    {
+                        return (SolidColorBrush)(Brush)brush.ConvertFrom("#FF498C51");
+                    }
+                    else
+                    {
+                        return (SolidColorBrush)(Brush)brush.ConvertFrom("#7fff00");
+                    }
+                }
+                else
+                {
+                    return (SolidColorBrush)(Brush)brush.ConvertFrom("#ffffff");
+                }
+            }
 
+        }
 
         public string Naimenovanie
         {
@@ -42,7 +69,7 @@ namespace YP_MDK
         {
             get
             {
-                return "Производитель: " + ProductManufacturer;
+                return "Производитель: " + Manufacturer.Manufacturer1;
             }
         }
         public string Skidka

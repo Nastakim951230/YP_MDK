@@ -22,6 +22,11 @@
         <Grid Grid.Row="0">
             <TextBlock Name="UsersFio" HorizontalAlignment="Right" Margin="0,5,10,0">ФИО пользователя</TextBlock>
         </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Button Name="addProduct" Click="addProduct_Click">Добавить новый продукт</Button>
+            </StackPanel>
+        </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -65,7 +70,7 @@
             <ListView Name="ListProduct" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="#FF76E383" Background="{Binding colorBrush}">
+                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="{Binding colorBrush}" Background="{Binding colorBrush}">
                             <Grid>
 
                                 <Grid.ColumnDefinitions>
@@ -91,9 +96,13 @@
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Column="2" HorizontalAlignment="Right">
-                                    <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <TextBlock Text="Скидка:"/>
                                         <TextBlock Text="{Binding ProductDiscountAmount, StringFormat={}{0}%}"/>
+                                    </StackPanel>
+                                        <Button  Name="DeletProduct" Click="DeletProduct_Click">Удалить</Button>
+                                        <Button  Name="UpdateProduct" Click="UpdateProduct_Click">Редактировать</Button>
                                     </StackPanel>
                                 </Grid>
                             </Grid>

@@ -107,5 +107,7 @@ namespace YP_MDK.Page
         {
             ClassPage.FrameNavigate.perehod.Navigate(new Avtorizats());
         }
+
+       
     }
 }

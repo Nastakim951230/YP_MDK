@@ -20,6 +20,7 @@ namespace YP_MDK.Page
     /// </summary>
     public partial class Str_Gost 
     {
+
         public Str_Gost()
         {
             InitializeComponent();
@@ -103,6 +104,15 @@ namespace YP_MDK.Page
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
             ClassPage.FrameNavigate.perehod.Navigate(new Avtorizats());
+        }
+
+        private void Grid_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //Grid tb = (Grid)sender;
+            //string id = tb.Uid;
+            
+          
+            //MessageBox.Show("Предмет добавлен в заказ");
         }
     }
 }
