@@ -69,11 +69,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClassPage\ClassProductBasket.cs" />
+    <Compile Include="Page\BasketUser.xaml.cs">
+      <DependentUpon>BasketUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ClassPage\ClassBase.cs" />
-    <Compile Include="ClassPage\ClassProductBasket.cs" />
     <Compile Include="ClassPage\FrameNavigate.cs" />
     <Compile Include="ClassProduct.cs" />
     <Compile Include="Manufacturer.cs">
@@ -121,6 +124,10 @@
     <Compile Include="User.cs">
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
+    <Page Include="Page\BasketUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

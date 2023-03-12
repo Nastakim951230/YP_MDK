@@ -20,7 +20,7 @@ namespace YP_MDK.Page
     /// </summary>
     public partial class Str_Gost 
     {
-        List<ClassPage.ClassProductBasket> basket=new List<ClassPage.ClassProductBasket>();
+        List<ClassProductBasket> basket=new List<ClassProductBasket>();
         
         
         public Str_Gost()
@@ -116,7 +116,7 @@ namespace YP_MDK.Page
 
             Product index = ClassPage.ClassBase.BD.Product.FirstOrDefault(x=>x.ProductArticleNumber==id);
             bool kolvo=false;
-            foreach (ClassPage.ClassProductBasket productBasket in basket)
+            foreach (ClassProductBasket productBasket in basket)
             {
                 if (productBasket.productBasket == index)
                 {
@@ -126,7 +126,7 @@ namespace YP_MDK.Page
             }
             if (!kolvo)
             {
-                ClassPage.ClassProductBasket product = new ClassPage.ClassProductBasket();
+                ClassProductBasket product = new ClassProductBasket();
                 product.productBasket = index;
                 product.count = 1;
                 basket.Add(product);
