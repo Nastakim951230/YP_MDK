@@ -20,11 +20,18 @@ namespace YP_MDK
     /// </summary>
     public partial class BasketUser 
     {
-     
+        User user;
+        List<ClassProductBasket> baskets;
         public BasketUser(User user, List<ClassProductBasket> baskets)
         {
             InitializeComponent();
-           
+            if(user != null)
+            {
+                FIOUser.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+            }
+
+           this.user = user;
+            this.baskets = baskets;
             ListBasket.ItemsSource = baskets;
         }
 

@@ -12,14 +12,21 @@
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="150"/>
+
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Name="FIOUser"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
             <ListView Name="ListBasket" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="{Binding colorBrush}" Background="{Binding colorBackground}">
+                        <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="{Binding productBasket.colorBrush}" Background="{Binding productBasket.colorBackground}">
                         <Grid>
 
                             <Grid.ColumnDefinitions>
@@ -28,18 +35,18 @@
                                 <ColumnDefinition Width="150"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <Image Source="{Binding ProductPhoto, TargetNullValue={StaticResource defaultImage}}" Width="180"></Image>
+                                    <Image Source="{Binding productBasket.ProductPhoto, TargetNullValue={StaticResource defaultImage}}" Width="180"></Image>
                             </Grid>
                             <Grid Grid.Column="1" >
                                 <StackPanel>
-                                    <TextBlock Text="{Binding Naimenovanie}"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.Naimenovanie}"></TextBlock>
                                     <TextBlock Text="Описание:"></TextBlock>
-                                    <TextBlock Text="{Binding ProductDescription}"></TextBlock>
-                                    <TextBlock Text="{Binding Manufacture}"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.ProductDescription}" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.Manufacture}"></TextBlock>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Цена:"></TextBlock>
-                                        <TextBlock Text="{Binding ProductCost, StringFormat={}{0:F2}}" TextDecorations="{Binding Decoration}"></TextBlock>
-                                        <TextBlock Text="{Binding Skidka}"></TextBlock>
+                                            <TextBlock Text="{Binding productBasket.ProductCost, StringFormat={}{0:F2}}" TextDecorations="{Binding productBasket.Decoration}"></TextBlock>
+                                            <TextBlock Text="{Binding productBasket.Skidka}"></TextBlock>
                                     </StackPanel>
 
                                 </StackPanel>
@@ -47,7 +54,7 @@
                             <Grid Grid.Column="2" HorizontalAlignment="Right">
                                 <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock Text="Скидка:"/>
-                                    <TextBlock Text="{Binding ProductDiscountAmount, StringFormat={}{0}%}"/>
+                                        <TextBlock Text="{Binding productBasket.ProductDiscountAmount, StringFormat={}{0}%}"/>
                                 </StackPanel>
                             </Grid>
 

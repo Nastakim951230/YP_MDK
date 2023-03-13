@@ -22,7 +22,7 @@ namespace YP_MDK.Page
     {
         List<ClassProductBasket> basket=new List<ClassProductBasket>();
 
-        List<Product> productBasket = ClassPage.ClassBase.BD.Product.ToList();
+        
         public Str_Gost()
         {
             InitializeComponent();
@@ -111,29 +111,31 @@ namespace YP_MDK.Page
 
         private void addOrder_Click(object sender, RoutedEventArgs e)
         {
-            MenuItem btn = (MenuItem)sender;
-            string id = btn.Uid;
-
-            Product index = ClassPage.ClassBase.BD.Product.FirstOrDefault(x=>x.ProductArticleNumber==id);
-            bool kolvo=false;
-
-            
-            foreach (ClassProductBasket productBasket in basket)
+            Product index = (Product)ListProduct.SelectedItem;
+            if (index != null)
             {
-                if (productBasket.productBasket == index)
+                bool kolvo = false;
+                foreach (ClassProductBasket productBasket in basket)
                 {
-                    productBasket.count = productBasket.count += 1;
-                    kolvo = true;
+                    if (productBasket.productBasket == index)
+                    {
+                        productBasket.count = productBasket.count += 1;
+                        kolvo = true;
+                    }
                 }
+                if (!kolvo)
+                {
+                    ClassProductBasket product = new ClassProductBasket();
+                    product.productBasket = index;
+                    product.count = 1;
+                    basket.Add(product);
+                }
+                BasketButton.Visibility = Visibility.Visible;
             }
-            if (!kolvo)
+            else
             {
-                ClassProductBasket product = new ClassProductBasket();
-                product.productBasket = index;
-                product.count = 1;
-                basket.Add(product);
+                MessageBox.Show("Ошибка");
             }
-            BasketButton.Visibility = Visibility.Visible;
 
         }
 
