@@ -78,7 +78,7 @@
     </Compile>
     <Compile Include="ClassPage\ClassBase.cs" />
     <Compile Include="ClassPage\FrameNavigate.cs" />
-    <Compile Include="ClassProduct.cs" />
+    <Compile Include="ClassPage\ClassProduct.cs" />
     <Compile Include="Manufacturer.cs">
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>

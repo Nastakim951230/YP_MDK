@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YP_MDK
 {
-    internal class ClassProductBasket
+    public class ClassProductBasket
     {
         public Product productBasket { get; set; }
         public int count { get; set; }

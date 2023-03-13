@@ -20,13 +20,12 @@ namespace YP_MDK
     /// </summary>
     public partial class BasketUser 
     {
-     // public static  List<ClassProductBasket> baskets;
-       public static User user;
-        public BasketUser()
+     
+        public BasketUser(User user, List<ClassProductBasket> baskets)
         {
             InitializeComponent();
            
-           // ListBasket.ItemsSource = baskets;
+            ListBasket.ItemsSource = baskets;
         }
 
     }
