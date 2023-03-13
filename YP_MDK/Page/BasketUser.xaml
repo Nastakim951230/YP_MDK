@@ -30,9 +30,9 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="250"/>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="220"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                     <Image Source="{Binding productBasket.ProductPhoto, TargetNullValue={StaticResource defaultImage}}" Width="180"></Image>
@@ -40,16 +40,26 @@
                             <Grid Grid.Column="1" >
                                 <StackPanel>
                                         <TextBlock Text="{Binding productBasket.Naimenovanie}"></TextBlock>
+                                        
                                     <TextBlock Text="Описание:"></TextBlock>
                                         <TextBlock Text="{Binding productBasket.ProductDescription}" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.CategoriaTovara}"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.UnitTovara}"></TextBlock>
                                         <TextBlock Text="{Binding productBasket.Manufacture}"></TextBlock>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Цена:"></TextBlock>
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Цена:"></TextBlock>
                                             <TextBlock Text="{Binding productBasket.ProductCost, StringFormat={}{0:F2}}" TextDecorations="{Binding productBasket.Decoration}"></TextBlock>
                                             <TextBlock Text="{Binding productBasket.Skidka}"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Количество"></TextBlock>
+                                            <TextBox Text="{Binding count}" TextChanged="TextBox_TextChanged"></TextBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="DeletProductBasket" Click="DeletProductBasket_Click">Убрать продукт</Button>
+                                        </StackPanel>
                                     </StackPanel>
-
-                                </StackPanel>
                             </Grid>
                             <Grid Grid.Column="2" HorizontalAlignment="Right">
                                 <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -64,7 +74,36 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-        <Grid Grid.Row="1"></Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel>
+                    <GroupBox Header="Выберите адрес выдачи">
+                        <ComboBox Name="address"></ComboBox>
+                    </GroupBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock Name="ItogCoint" Margin="10,0,0,0">Итоговая цена:</TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Margin="0,0,10,0">
+                    <TextBlock Name="ItogSkidka" > Итоговая скидка:</TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="Nazad" Click="Nazad_Click">Назад</Button>
+                    <Button Name="order" Click="order_Click">Оформить заказ</Button>
+                </StackPanel>
+            </Grid>
+
+
+        </Grid>
     </Grid>
 
 </Page>

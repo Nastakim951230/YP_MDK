@@ -64,7 +64,20 @@ namespace YP_MDK
                 return "Название товара: " + ProductName;
             }
         }
-
+        public string UnitTovara
+        {
+            get
+            {
+                return "Единица: " + Unit.Unit1;
+            }
+        }
+        public string CategoriaTovara
+        {
+            get
+            {
+                return "Категория товара: " + Category.Category1;
+            }
+        }
         public string Manufacture
         {
             get

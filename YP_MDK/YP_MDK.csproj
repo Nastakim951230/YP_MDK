@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClassAddress.cs" />
     <Compile Include="ClassPage\ClassProductBasket.cs" />
     <Compile Include="Page\BasketUser.xaml.cs">
       <DependentUpon>BasketUser.xaml</DependentUpon>

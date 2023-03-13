@@ -22,6 +22,7 @@ namespace YP_MDK
     {
         User user;
         List<ClassProductBasket> baskets;
+        List <PointOfIssue> points=ClassPage.ClassBase.BD.PointOfIssue.ToList();
         public BasketUser(User user, List<ClassProductBasket> baskets)
         {
             InitializeComponent();
@@ -33,7 +34,33 @@ namespace YP_MDK
            this.user = user;
             this.baskets = baskets;
             ListBasket.ItemsSource = baskets;
+            address.Items.Add("Не выбрано");
+            for(int i = 0; i < points.Count; i++)
+            {
+                address.Items.Add(points[i].AddressAndIndex);
+            }
+            address.SelectedIndex = 0;
+            
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Nazad_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void order_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeletProductBasket_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
