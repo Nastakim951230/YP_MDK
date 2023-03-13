@@ -25,7 +25,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Name="BasketButton" Click="BasketButton_Click" Visibility="Collapsed">Корзина</Button>
+                <Button Name="BasketButton" Click="Basket_Click" Visibility="Collapsed">Корзина</Button>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2" Margin="5,0,0,0">

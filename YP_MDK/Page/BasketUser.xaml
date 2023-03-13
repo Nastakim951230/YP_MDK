@@ -54,7 +54,7 @@
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Количество"></TextBlock>
-                                            <TextBox Text="{Binding count}" TextChanged="TextBox_TextChanged"></TextBox>
+                                            <TextBox  Text="{Binding count}" Name="count_product" TextChanged="CountProduct_TextChanged"></TextBox>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Button Name="DeletProductBasket" Click="DeletProductBasket_Click">Убрать продукт</Button>
@@ -92,7 +92,7 @@
                     <TextBlock Name="ItogCoint" Margin="10,0,0,0">Итоговая цена:</TextBlock>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Margin="0,0,10,0">
-                    <TextBlock Name="ItogSkidka" > Итоговая скидка:</TextBlock>
+                    <TextBlock Name="ItogSkidka"  > Итоговая скидка:</TextBlock>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2">

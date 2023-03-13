@@ -22,12 +22,16 @@ namespace YP_MDK.Page
     {
         User user;
         List<ClassProductBasket> basket = new List<ClassProductBasket>();
-
+        public static List<ClassProductBasket> Basket;
         public Admin(User user)
         {
             InitializeComponent();
             ListProduct.ItemsSource = ClassPage.ClassBase.BD.Product.ToList();
-
+            if (Basket != null)
+            {
+                basket = Basket;
+                BasketButton.Visibility = Visibility.Visible;
+            }
             Sortirov.SelectedIndex = 0;
             Filter.SelectedIndex = 0;
             kolvo.Text = "" + ClassPage.ClassBase.BD.Product.ToList().Count() + " из " + ClassPage.ClassBase.BD.Product.ToList().Count();
@@ -127,32 +131,37 @@ namespace YP_MDK.Page
 
         private void addOrder_Click(object sender, RoutedEventArgs e)
         {
-            MenuItem btn = (MenuItem)sender;
-            string id = btn.Uid;
-
-            Product index = ClassPage.ClassBase.BD.Product.FirstOrDefault(x => x.ProductArticleNumber == id);
-            bool kolvo = false;
-            foreach (ClassProductBasket productBasket in basket)
+            Product index = (Product)ListProduct.SelectedItem;
+            if (index != null)
             {
-                if (productBasket.productBasket == index)
+                bool kolvo = false;
+                foreach (ClassProductBasket productBasket in basket)
                 {
-                    productBasket.count = productBasket.count += 1;
-                    kolvo = true;
+                    if (productBasket.productBasket == index)
+                    {
+                        productBasket.count = productBasket.count += 1;
+                        kolvo = true;
+                    }
                 }
+                if (!kolvo)
+                {
+                    ClassProductBasket product = new ClassProductBasket();
+                    product.productBasket = index;
+                    product.count = 1;
+                    basket.Add(product);
+                }
+                BasketButton.Visibility = Visibility.Visible;
             }
-            if (!kolvo)
+            else
             {
-                ClassProductBasket product = new ClassProductBasket();
-                product.productBasket = index;
-                product.count = 1;
-                basket.Add(product);
+                MessageBox.Show("Ошибка");
             }
-            BasketButton.Visibility = Visibility.Visible;
+
         }
 
-        private void BasketButton_Click(object sender, RoutedEventArgs e)
+        private void Basket_Click(object sender, RoutedEventArgs e)
         {
-
+            ClassPage.FrameNavigate.perehod.Navigate(new BasketUser(user, basket));
         }
     }
 }

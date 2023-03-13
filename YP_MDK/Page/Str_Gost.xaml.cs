@@ -21,13 +21,17 @@ namespace YP_MDK.Page
     public partial class Str_Gost 
     {
         List<ClassProductBasket> basket=new List<ClassProductBasket>();
-
+        public static List<ClassProductBasket> Basket;
         
         public Str_Gost()
         {
             InitializeComponent();
             ListProduct.ItemsSource =ClassPage.ClassBase.BD.Product.ToList();
-             
+             if(Basket!=null)
+            {
+                basket = Basket;
+                BasketButton.Visibility = Visibility.Visible;
+            }
             Sortirov.SelectedIndex = 0;
             Filter.SelectedIndex = 0;
             kolvo.Text = "" + ClassPage.ClassBase.BD.Product.ToList().Count() + " из " + ClassPage.ClassBase.BD.Product.ToList().Count();
