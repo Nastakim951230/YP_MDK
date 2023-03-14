@@ -11,5 +11,14 @@ namespace YP_MDK
         public Product productBasket { get; set; }
         public int count { get; set; }
 
+        public double cost
+        {
+            get
+            {
+                double costProduct = Convert.ToDouble(productBasket.ProductCost) *count;
+                return costProduct;
+            }
+        }
+
     }
 }

@@ -14,8 +14,26 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
-            <ListView Name="listZakaz" >
-                
+            <ListView Name="listZakaz" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <Grid>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding productBasket.ProductName}"></TextBlock>
+                                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                        <TextBlock Text="{Binding count}"></TextBlock>
+                                        <TextBlock Text="x"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.ProductCost}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel HorizontalAlignment="Right">
+                                        
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </Grid>
         <Grid Grid.Row="0">

@@ -42,6 +42,7 @@ namespace YP_MDK
             Kod.Text = "Код получения: " + order.CodeToReceive;
             Summa.Text = "Итог:"+summaCoint.ToString();
             Skidka.Text = "Скидка: "+summaDiscount+"%";
+            listZakaz.ItemsSource = baskets;
         }
 
         private void document_Click(object sender, RoutedEventArgs e)
