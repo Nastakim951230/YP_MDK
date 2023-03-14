@@ -54,10 +54,10 @@
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Количество"></TextBlock>
-                                            <TextBox  Text="{Binding count}" Name="count_product" TextChanged="CountProduct_TextChanged"></TextBox>
+                                            <TextBox Uid="{Binding productBasket.ProductArticleNumber}" Text="{Binding count}" Name="count_product" TextChanged="CountProduct_TextChanged"></TextBox>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Name="DeletProductBasket" Click="DeletProductBasket_Click">Убрать продукт</Button>
+                                            <Button Uid="{Binding productBasket.ProductArticleNumber}" Name="DeletProductBasket" Click="DeletProductBasket_Click">Убрать продукт</Button>
                                         </StackPanel>
                                     </StackPanel>
                             </Grid>

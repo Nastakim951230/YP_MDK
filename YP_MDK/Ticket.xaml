@@ -1,0 +1,62 @@
+﻿<Window x:Class="YP_MDK.Ticket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP_MDK"
+        mc:Ignorable="d"
+        Title="Ticket" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <ListView Name="listZakaz" >
+                
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="0">
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Name="NomerZakaza">Нормер заказа:12</TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Name="dataZakaz" Margin="10,5,10,5">Дата заказа:10.12.10</TextBlock>
+                    <TextBlock Name="dataOfReceiving" Margin="10">Дата получения:10.12.10</TextBlock>
+                    <TextBlock Name="day" Margin="10">Срок доставки :3 дня</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Name="PickupPoint" Margin="10,0,10,0" >Пункт выдачи:</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Name="Kod" Style="{StaticResource kod}" Margin="10,0,10,0" >Код получения:</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" >Состав заказа</TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel HorizontalAlignment="Left">
+                <TextBlock Name="Summa" Margin="10,0,10,0">Итог: </TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right">
+                <TextBlock Name="Skidka" Margin="10,0,10,0">Скидка:</TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            
+            <StackPanel HorizontalAlignment="Left">
+                <Button Name="Nazad" Click="Nazad_Click">Назад</Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="407,0,0,0">
+                <Button Name="document" Click="document_Click">Сохранить в PDF</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
