@@ -52,7 +52,7 @@ namespace YP_MDK
 
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

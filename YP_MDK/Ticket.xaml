@@ -24,10 +24,21 @@
                                     <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                                         <TextBlock Text="{Binding count}"></TextBlock>
                                         <TextBlock Text="x"></TextBlock>
-                                        <TextBlock Text="{Binding productBasket.ProductCost}"></TextBlock>
+                                        <TextBlock Text="{Binding productBasket.ProductCost, StringFormat={}{0:F2}}"></TextBlock>
                                     </StackPanel>
                                     <StackPanel HorizontalAlignment="Right">
+                                        <TextBlock Text="{Binding cost}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                                         
+                                        <TextBlock Text="Скидка: "></TextBlock>
+                                        <TextBlock Text="{Binding skidka, StringFormat={}{0:F2}%}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel HorizontalAlignment="Right">
+                                        <TextBlock Text="{Binding skidkacost2}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel HorizontalAlignment="Right">
+                                        <TextBlock Text="{Binding skidkaCost}"></TextBlock>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>

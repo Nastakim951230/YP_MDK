@@ -214,7 +214,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\" />
+    <Folder Include="windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\A346R4.jpg" />
