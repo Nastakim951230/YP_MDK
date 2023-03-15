@@ -165,6 +165,37 @@ namespace YP_MDK
                         Ticket ticket = new Ticket(order, baskets, summaCoint, itogskidka, dateDelivery);
                         ticket.ShowDialog();
                         baskets.Clear();
+                        if (user != null)
+                        {
+                            if (baskets.Count == 0)
+                            {
+                                baskets = null;
+                            }
+                            if (user.UserRole == 1)
+                            {
+                                Page.Str_Gost.Basket = baskets;
+                                ClassPage.FrameNavigate.perehod.Navigate(new Page.Client(user));
+                            }
+                            else if (user.UserRole == 2)
+                            {
+                                Page.Str_Gost.Basket = baskets;
+                                ClassPage.FrameNavigate.perehod.Navigate(new Page.Admin(user));
+                            }
+                            else if (user.UserRole == 3)
+                            {
+                                Page.Str_Gost.Basket = baskets;
+                                ClassPage.FrameNavigate.perehod.Navigate(new Page.Manager(user));
+                            }
+                        }
+                        else
+                        {
+                            if (baskets.Count == 0)
+                            {
+                                baskets = null;
+                            }
+                            Page.Str_Gost.Basket = baskets;
+                            ClassPage.FrameNavigate.perehod.Navigate(new Page.Str_Gost());
+                        }
                     }
                     else
                     {
