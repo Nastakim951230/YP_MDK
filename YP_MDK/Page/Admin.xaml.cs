@@ -116,7 +116,21 @@ namespace YP_MDK.Page
 
         private void DeletProduct_Click(object sender, RoutedEventArgs e)
         {
+            Button button = (Button)sender;
+            string index = button.Uid;
+            Product product=ClassPage.ClassBase.BD.Product.FirstOrDefault(x=>x.ProductArticleNumber==index);
+            List<OrderProduct> orderProducts = ClassPage.ClassBase.BD.OrderProduct.Where(x => x.ProductArticleNumber == index).ToList();
+            if(orderProducts.Count > 0)
+            {
+                MessageBox.Show("Данный продукт нельзя удалить");
 
+            }
+            else
+            {
+                ClassPage.ClassBase.BD.Product.Remove(product);
+                ClassPage.ClassBase.BD.SaveChanges();
+                ClassPage.FrameNavigate.perehod.Navigate(new Admin(user));
+            }
         }
 
         private void addProduct_Click(object sender, RoutedEventArgs e)

@@ -102,7 +102,7 @@
                                         <TextBlock Text="Скидка:"/>
                                         <TextBlock Text="{Binding ProductDiscountAmount, StringFormat={}{0}%}"/>
                                     </StackPanel>
-                                        <Button  Name="DeletProduct" Click="DeletProduct_Click">Удалить</Button>
+                                        <Button Uid="{Binding ProductArticleNumber}" Name="DeletProduct" Click="DeletProduct_Click">Удалить</Button>
                                         <Button  Name="UpdateProduct" Click="UpdateProduct_Click">Редактировать</Button>
                                     </StackPanel>
                                 </Grid>
