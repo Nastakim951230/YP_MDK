@@ -100,7 +100,7 @@ namespace YP_MDK
                 }
             }
             height += 30;
-            gfx.DrawString("Итого: " + summaCoint + "Скидка: " + summaDiscount + "%", font, XBrushes.Black, new XRect(10, height, page.Width, page.Height), XStringFormat.TopLeft);
+            gfx.DrawString("Итого: " + summaCoint + "      Скидка: " + summaDiscount + "%", font, XBrushes.Black, new XRect(10, height, page.Width, page.Height), XStringFormat.TopLeft);
             height += 40;
             string filename = "Ticket.pdf";
             // Сохраняем файл под названием Test.pdf
