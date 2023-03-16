@@ -45,10 +45,10 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView Name="listoRDER" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalAlignment="Stretch">
+            <ListView Name="listoRDER" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border>
+                        <Border Background="{Binding colorBackground}">
                             <Grid>
                                 <StackPanel>
                                     <TextBlock Text="{Binding Nomer}" HorizontalAlignment="Center"></TextBlock>
@@ -68,6 +68,7 @@
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                
             </ListView>
         </Grid>
         <Grid Grid.Row="2">

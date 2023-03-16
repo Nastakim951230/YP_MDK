@@ -77,7 +77,7 @@
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ClassPage\ClassAddress.cs" />
-    <Compile Include="ClassOrder.cs" />
+    <Compile Include="ClassPage\ClassOrder.cs" />
     <Compile Include="ClassPage\ClassProductBasket.cs" />
     <Compile Include="Page\BasketUser.xaml.cs">
       <DependentUpon>BasketUser.xaml</DependentUpon>

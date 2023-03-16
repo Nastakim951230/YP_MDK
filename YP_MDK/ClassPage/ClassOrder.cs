@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace YP_MDK
 {
@@ -55,7 +56,7 @@ namespace YP_MDK
                 {
                     foreach (OrderProduct order in orderProducts)
                     {
-                        product += "Номер продукта: "+ order.Product.ProductArticleNumber + "Название продукта: " + order.Product.ProductName + ", Количества продуктов: "+order.kolvo+"\n";
+                        product += "Номер продукта: "+ order.Product.ProductArticleNumber + ",  Название продукта: " + order.Product.ProductName + ",  Количества продуктов: "+order.kolvo+"\n";
                     }
                     product = product.Substring(0, product.Length - 1);
                 }
@@ -63,33 +64,37 @@ namespace YP_MDK
             }
         }
 
-        //public string cost
-        //{
-        //    get
-        //    {
+        public SolidColorBrush colorBackground
+        {
+            get
+            {
 
-        //        List<OrderProduct> orderProducts=ClassPage.ClassBase.BD.OrderProduct.Where(x=>x.OrderID == OrderID).ToList();
-        //        int coint = orderProducts.Count;
-        //        for (int i = 0; i < coint; i++)
-        //        {
-        //            if (orderProducts[i].Product.ProductDiscountAmount != 0)
-        //            {
-        //                summaSkidki = summaSkidki + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
-        //                summaCoint = summaCoint + ((double)(Convert.ToDouble(orderProducts[i].Product.ProductCost) - (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].Product.ProductDiscountAmount / 100)) * orderProducts[i].kolvo);
-        //            }
-        //            else
-        //            {
-        //                summaSkidki = summaSkidki + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
-        //                summaCoint = summaCoint + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
-        //            }
-        //        }
-        //        double skidka = (summaSkidki - summaCoint) * 100 / summaSkidki;
-        //        itogskidka = string.Format("{0:F2}", skidka);
-        //        return "Итоговая цена: " + string.Format("{0:F2}", summaCoint) + "     Итоговая скидка: " + itogskidka + "%";
-              
-        //    }
-        //}
+                List<OrderProduct> orderProducts = ClassPage.ClassBase.BD.OrderProduct.Where(x => x.OrderID == OrderID).ToList();
+                var brush = new BrushConverter();
+                string product = "";
+               
+                    foreach (OrderProduct order in orderProducts)
+                { 
+                    if (order.Product.ProductQuantityInStock > 3)
+                    {
+                        product = "#20b2aa";
+                    }
+                    else if (order.Product.ProductQuantityInStock == 0)
+                    {
+                        product = "#ff8c00";
+                    }
+                    else
+                    {
+                        product = "#ffffff";
+                        
+                    }
+                }
+                return (SolidColorBrush)(Brush)brush.ConvertFrom(product);
+            }
 
+
+
+        }
         public double costSkidka
         {
             get
