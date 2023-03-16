@@ -56,7 +56,13 @@
                                     <TextBlock Text="{Binding Name}" Margin="10,0,0,0"></TextBlock>
                                     <TextBlock Text="Состав заказа" HorizontalAlignment="Center"></TextBlock>
                                     <TextBlock Text="{Binding product}" Margin="10,0,0,0"></TextBlock>
-                                    <TextBlock Text="{Binding cost}" Margin="10,0,0,0"></TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Итоговая цена: "></TextBlock>
+                                        <TextBlock Text="{Binding costSkidka,StringFormat={}{0:F2}}" Margin="10,0,0,0"></TextBlock>
+                                        <TextBlock Text="   Скидка: "></TextBlock>
+                                        <TextBlock Text="{Binding Skidka, StringFormat={}{0:F2}%}"></TextBlock>
+                                    </StackPanel>
+                                    
                                 </StackPanel>
                             </Grid>
                         </Border>

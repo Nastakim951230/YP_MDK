@@ -8,9 +8,8 @@ namespace YP_MDK
 {
     public partial class Order
     {
-        double summaCoint;
-        double summaSkidki;
-        string itogskidka;
+        
+        
         public string Nomer
         {
             get
@@ -64,12 +63,66 @@ namespace YP_MDK
             }
         }
 
-        public string cost
+        //public string cost
+        //{
+        //    get
+        //    {
+
+        //        List<OrderProduct> orderProducts=ClassPage.ClassBase.BD.OrderProduct.Where(x=>x.OrderID == OrderID).ToList();
+        //        int coint = orderProducts.Count;
+        //        for (int i = 0; i < coint; i++)
+        //        {
+        //            if (orderProducts[i].Product.ProductDiscountAmount != 0)
+        //            {
+        //                summaSkidki = summaSkidki + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
+        //                summaCoint = summaCoint + ((double)(Convert.ToDouble(orderProducts[i].Product.ProductCost) - (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].Product.ProductDiscountAmount / 100)) * orderProducts[i].kolvo);
+        //            }
+        //            else
+        //            {
+        //                summaSkidki = summaSkidki + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
+        //                summaCoint = summaCoint + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
+        //            }
+        //        }
+        //        double skidka = (summaSkidki - summaCoint) * 100 / summaSkidki;
+        //        itogskidka = string.Format("{0:F2}", skidka);
+        //        return "Итоговая цена: " + string.Format("{0:F2}", summaCoint) + "     Итоговая скидка: " + itogskidka + "%";
+              
+        //    }
+        //}
+
+        public double costSkidka
         {
             get
             {
+                double summaCoint = 0;
+              
+                List<OrderProduct> orderProducts = ClassPage.ClassBase.BD.OrderProduct.Where(x => x.OrderID == OrderID).ToList();
+                int coint = orderProducts.Count;
+                for (int i = 0; i < coint; i++)
+                {
+                    if (orderProducts[i].Product.ProductDiscountAmount != 0)
+                    {
+                       
+                        summaCoint = summaCoint + ((double)(Convert.ToDouble(orderProducts[i].Product.ProductCost) - (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].Product.ProductDiscountAmount / 100)) * orderProducts[i].kolvo);
+                    }
+                    else
+                    {
+                       
+                        summaCoint = summaCoint + (Convert.ToDouble(orderProducts[i].Product.ProductCost) * orderProducts[i].kolvo);
+                    }
+                }
+              
+                return  summaCoint ;
+            }
+        }
 
-                List<OrderProduct> orderProducts=ClassPage.ClassBase.BD.OrderProduct.Where(x=>x.OrderID == OrderID).ToList();
+        public double Skidka
+        {
+            get
+            {
+                double summaCoint=0;
+                double summaSkidki=0;
+                List<OrderProduct> orderProducts = ClassPage.ClassBase.BD.OrderProduct.Where(x => x.OrderID == OrderID).ToList();
                 int coint = orderProducts.Count;
                 for (int i = 0; i < coint; i++)
                 {
@@ -85,9 +138,8 @@ namespace YP_MDK
                     }
                 }
                 double skidka = (summaSkidki - summaCoint) * 100 / summaSkidki;
-                itogskidka = string.Format("{0:F2}", skidka);
-                return "Итоговая цена: " + summaCoint+ "     Итоговая скидка: " + itogskidka + "%";
-              
+
+                return skidka;
             }
         }
     }

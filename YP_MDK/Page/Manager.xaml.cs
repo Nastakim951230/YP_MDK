@@ -151,7 +151,8 @@ namespace YP_MDK.Page
 
         private void zakaz_Click(object sender, RoutedEventArgs e)
         {
-            ClassPage.FrameNavigate.perehod.Navigate(new Zakaz());
+           
+            ClassPage.FrameNavigate.perehod.Navigate(new Zakaz(user));
         }
     }
 }
