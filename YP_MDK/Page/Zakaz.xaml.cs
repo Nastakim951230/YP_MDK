@@ -106,5 +106,13 @@ namespace YP_MDK.Page
         {
              Filt();
         }
+
+        private void order_Click(object sender, RoutedEventArgs e)
+        {
+            Order index = (Order)listoRDER.SelectedItem;
+            Izmenenie izmenenie = new Izmenenie(index);
+            izmenenie.ShowDialog();
+            ClassPage.FrameNavigate.perehod.Navigate(new Zakaz(user));
+        }
     }
 }

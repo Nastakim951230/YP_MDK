@@ -66,21 +66,21 @@ namespace YP_MDK
 
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
-            if(user!=null)
+            if (user != null)
             {
-               if(user.UserRole==1)
+                if (user.UserRole == 1)
                 {
-                    Page.Str_Gost.Basket = baskets;
+                    Page.Client.Basket = baskets;
                     ClassPage.FrameNavigate.perehod.Navigate(new Page.Client(user));
                 }
-               else if(user.UserRole==2)
+                else if (user.UserRole == 2)
                 {
-                    Page.Str_Gost.Basket = baskets;
+                    Page.Admin.Basket = baskets;
                     ClassPage.FrameNavigate.perehod.Navigate(new Page.Admin(user));
                 }
                 else if (user.UserRole == 3)
                 {
-                    Page.Str_Gost.Basket = baskets;
+                    Page.Manager.Basket = baskets;
                     ClassPage.FrameNavigate.perehod.Navigate(new Page.Manager(user));
                 }
             }

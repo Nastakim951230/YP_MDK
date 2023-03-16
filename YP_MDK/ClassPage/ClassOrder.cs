@@ -71,9 +71,9 @@ namespace YP_MDK
 
                 List<OrderProduct> orderProducts = ClassPage.ClassBase.BD.OrderProduct.Where(x => x.OrderID == OrderID).ToList();
                 var brush = new BrushConverter();
-                string product = "";
+                string product = "#ffffff";
                
-                    foreach (OrderProduct order in orderProducts)
+                foreach (OrderProduct order in orderProducts)
                 { 
                     if (order.Product.ProductQuantityInStock > 3)
                     {

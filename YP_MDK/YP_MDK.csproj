@@ -79,6 +79,9 @@
     <Compile Include="ClassPage\ClassAddress.cs" />
     <Compile Include="ClassPage\ClassOrder.cs" />
     <Compile Include="ClassPage\ClassProductBasket.cs" />
+    <Compile Include="Izmenenie.xaml.cs">
+      <DependentUpon>Izmenenie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\BasketUser.xaml.cs">
       <DependentUpon>BasketUser.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
     <Compile Include="User.cs">
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
+    <Page Include="Izmenenie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\BasketUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
