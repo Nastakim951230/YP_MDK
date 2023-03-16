@@ -76,7 +76,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClassAddress.cs" />
+    <Compile Include="ClassPage\ClassAddress.cs" />
+    <Compile Include="ClassOrder.cs" />
     <Compile Include="ClassPage\ClassProductBasket.cs" />
     <Compile Include="Page\BasketUser.xaml.cs">
       <DependentUpon>BasketUser.xaml</DependentUpon>
@@ -110,6 +111,9 @@
     </Compile>
     <Compile Include="Page\Str_Gost.xaml.cs">
       <DependentUpon>Str_Gost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Zakaz.xaml.cs">
+      <DependentUpon>Zakaz.xaml</DependentUpon>
     </Compile>
     <Compile Include="PointOfIssue.cs">
       <DependentUpon>BaseBD.tt</DependentUpon>
@@ -178,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page\Str_Gost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\Zakaz.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

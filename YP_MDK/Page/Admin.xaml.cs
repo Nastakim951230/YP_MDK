@@ -177,5 +177,10 @@ namespace YP_MDK.Page
         {
             ClassPage.FrameNavigate.perehod.Navigate(new BasketUser(user, basket));
         }
+
+        private void zakaz_Click(object sender, RoutedEventArgs e)
+        {
+            ClassPage.FrameNavigate.perehod.Navigate(new Zakaz());
+        }
     }
 }

@@ -23,7 +23,11 @@
             <TextBlock Name="UsersFio" HorizontalAlignment="Right" Margin="0,5,10,0">ФИО пользователя</TextBlock>
         </Grid>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Name="zakaz" Click="zakaz_Click">Работа с заказом</Button>
+               
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right">
                 <Button Name="BasketButton" Click="Basket_Click" Visibility="Collapsed">Корзина</Button>
             </StackPanel>
         </Grid>

@@ -25,6 +25,9 @@
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Button Name="addProduct" Click="addProduct_Click">Добавить новый продукт</Button>
+                <Button Name="zakaz" Click="zakaz_Click">Работа с заказом</Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right">
                 <Button Name="BasketButton" Click="Basket_Click" Visibility="Collapsed">Корзина</Button>
             </StackPanel>
         </Grid>
