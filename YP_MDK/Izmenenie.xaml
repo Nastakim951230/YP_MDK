@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP_MDK"
         mc:Ignorable="d"
-        Title="Izmenenie" Height="250" Width="500">
+        Title="Изменить данные" Height="250" Width="500">
     <Grid>
         <StackPanel>
             <GroupBox Header="Изменить статус">
