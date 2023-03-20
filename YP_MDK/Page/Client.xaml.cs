@@ -38,7 +38,9 @@ namespace YP_MDK.Page
             this.user = user;
             UsersFio.Text=user.UserSurname+" "+user.UserName+" "+user.UserPatronymic;
         }
-
+        /// <summary>
+        /// Метод фильтрации, сортировки и поиска
+        /// </summary>
         void filter()
         {
             List<Product> products = ClassPage.ClassBase.BD.Product.ToList();

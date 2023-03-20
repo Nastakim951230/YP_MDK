@@ -43,6 +43,9 @@ namespace YP_MDK.Page
             }
         }
 
+        /// <summary>
+        /// метод поиска, фильтрации и сортировки
+        /// </summary>
         void Filt()
         {
 

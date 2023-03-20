@@ -36,7 +36,9 @@ namespace YP_MDK.Page
             Filter.SelectedIndex = 0;
             kolvo.Text = "" + ClassPage.ClassBase.BD.Product.ToList().Count() + " из " + ClassPage.ClassBase.BD.Product.ToList().Count();
         }
-
+        /// <summary>
+        /// метод поиска, сортировки и фильтрации
+        /// </summary>
         void filter()
         {
             List<Product> products = ClassPage.ClassBase.BD.Product.ToList();
